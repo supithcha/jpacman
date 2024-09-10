@@ -2,6 +2,7 @@ package nl.tudelft.jpacman.board;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BoardTest {
 
@@ -23,6 +24,20 @@ public class BoardTest {
 
         // Assert that the square at (0, 0) is the BasicSquare we created
         assertThat(board.squareAt(0, 0)).isEqualTo(grid[0][0]);
+    }
+
+    // Create a second test case in which you construct a similar board, but with just one null square.
+    // For both, write a test for the squareAt method. With what exception does your test fail?
+    @Test
+    void test1x1BoardWithNullSquare() {
+        // Create a 1x1 grid with a null square
+        Square[][] grid = new Square[1][1];
+        grid[0][0] = null;
+
+        // Assert that creating a board with a null square throws an AssertionError
+        assertThrows(AssertionError.class, () -> {
+            new Board(grid);
+        });
     }
 
 }
