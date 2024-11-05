@@ -37,6 +37,9 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew build -x checkstyleTest
 
+    - name: Run Tests in Headless Mode
+      run: ./gradlew build -Djava.awt.headless=true -x checkstyleTest
+
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
