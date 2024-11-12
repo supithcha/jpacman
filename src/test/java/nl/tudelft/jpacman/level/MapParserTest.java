@@ -1,8 +1,4 @@
 package nl.tudelft.jpacman.level;
-//
-//public class MapParserTest {
-//}
-
 
 import nl.tudelft.jpacman.PacmanConfigurationException;
 import nl.tudelft.jpacman.board.BoardFactory;
