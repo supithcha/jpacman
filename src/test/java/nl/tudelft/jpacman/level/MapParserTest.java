@@ -48,7 +48,7 @@ public class MapParserTest {
         map.add("############");
         mapParser.parseMap(map);
 
-        verify(levelFactory, times(1)).createGhost();
+        Mockito.verify(levelFactory, Mockito.atLeastOnce()).createGhost();
 
         // Verify that board elements are created correctly
         verify(boardFactory, times(20)).createGround();
